@@ -35,7 +35,8 @@ pipeline {
 
         stage('Wait for App to Start') {
             steps {
-                bat 'timeout /t 5'
+                // FIXED (no timeout issue)
+                bat 'ping 127.0.0.1 -n 6 > nul'
             }
         }
 
